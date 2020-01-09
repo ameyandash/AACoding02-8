@@ -1,6 +1,7 @@
 # AACoding02-8
 Second day of coding in Gary's freshmen adv. algebra class.
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,14 +11,36 @@ Second day of coding in Gary's freshmen adv. algebra class.
 <link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
 <link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111" />
 <title>CodePen - AACoding02-8</title>
+<style>
+.correct{
+  background:green;
+}
+
+.incorrect{
+  background:red;
+}
+</style>
 </head>
 <body translate="no">
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <h1>Ameyan's Hella Litty Math Problems</h1>
 <ol>
-<li>\(2^3 \) </li>
-<li>\(\sqrt[3]{8} \) </li>
-<li>\(8^\frac{1}{3} \) </li>
+<li>\(2^3 \) <input data-correct="8" /> </li>
+<li>\(\sqrt[3]{8} \) <input data-correct="2" /></li>
+<li>\(8^\frac{1}{3} \) <input data-correct="2" /> </li>
 <ol>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+<script id="rendered-js">
+$("input").change(onChange);
+
+function onChange (evt){
+  let correct = $(this).data("correct");
+  let response = $(this).val();
+  if(correct == response){
+    $(this).removeClass("incorrect"). addClass ("correct");
+  }
+}
+    </script>
 </body>
 </html>
+
